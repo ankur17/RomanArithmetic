@@ -1,0 +1,48 @@
+<html>
+<head>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		body {text-align: center;	}
+
+	</style>
+</head>
+<body>
+
+	<H1>ROMAN NUMBER ARITHMETIC</H1>
+	<div class="container">
+		<form method='post'>
+		{% csrf_token %}
+			<div class="row">
+	  			<div class="col-lg-6">
+	  				<div class="input-group-lg">
+					<span class="input-group-addon" id="basic-addon1">Input 1</span>
+					<input type="text" name="OneInput" class="form-control" placeholder="Roman Number"aria-describedby="basic-addon1" value="{{input1}}">
+					</div>
+	  			</div>
+				<div class="col-lg-6">
+					<div class="input-group-lg">
+					<span class="input-group-addon" id="basic-addon1">Input 2</span>
+					<input type="text" name="TwoInput" class="form-control" placeholder="Roman Number"aria-describedby="basic-addon1" value="{{input2}}"><br><br><br>
+					</div>
+				</div>
+				<select name="Operation" value="{{OpValue}}">
+					<option value=1>Add</option>
+					<option value=2>Subtract</option>
+					<option value=3>Multiply</option>
+					<option value=4>Divide</option>
+				</select>
+
+			</div>
+	<br><br><br>
+			<input class="btn-lg btn-primary" name="list" type="submit" value="Calculate">
+			
+
+		</form>	
+	</div>
+	
+	<h1 >{{Result}}</h1><br>
+</body>
+</html>
